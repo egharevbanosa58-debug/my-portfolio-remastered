@@ -8,7 +8,11 @@ body {
 }
 /* Contact Section */
 .contact {
-    padding: clamp(2rem, 8vw, 10rem) 1rem;
+    /* Add extra top padding so fixed top-left back button doesn't overlap header */
+    padding-top: calc(clamp(2rem, 8vw, 10rem) + 3rem);
+    padding-bottom: clamp(2rem, 8vw, 10rem);
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .contact h1 {
@@ -85,9 +89,19 @@ button:hover {
 }
 
 /* Back button utility class: looks like a button for links or elements with .backbtn */
+/* Back button: fixed top-left, compact and responsive
+   Placing the element anywhere in the DOM will show it at the viewport corner. */
 .backbtn {
-    display: inline-block;
-    padding: 0.55rem 0.9rem;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.7rem;
+    width: 120px;
+    max-width: calc(100% - 2rem);
     background-image: linear-gradient(to right, #0697e0, #19d5e6);
     color: #fff;
     border-radius: 10px;
@@ -96,18 +110,19 @@ button:hover {
     text-decoration: none;
     text-align: center;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    transition: transform .18s ease, box-shadow .18s ease, opacity .15s ease;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.14);
+    transition: transform .18s ease, box-shadow .18s ease, opacity .12s ease;
+    z-index: 1200;
 }
 
 .backbtn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.16);
 }
 
 .backbtn:active {
     transform: translateY(0);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
     opacity: 0.98;
 }
 
@@ -116,11 +131,52 @@ button:hover {
     outline-offset: 2px;
 }
 
-/* Make backbtn full-width on very small screens when used in flow */
-@media (max-width:420px) {
+/* SVG icon inside the back button */
+.backbtn svg {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    flex: 0 0 16px;
+}
+
+.backbtn span {
+    line-height: 1;
+}
+
+/* Responsive sizes for the fixed back button */
+@media (max-width: 420px) {
     .backbtn {
-        display: block;
-        width: 100%;
+        top: 0.6rem;
+        left: 0.6rem;
+        width: 100px;
+        padding: 0.35rem 0.6rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 720px) and (max-width: 1199px) {
+    .backbtn {
+        width: 130px;
+    }
+}
+
+/* Desktop: show icon-only to save space and reduce visual clutter
+   Keep aria-label on the link for screen readers. */
+@media (min-width: 900px) {
+    .backbtn {
+        width: 44px; /* square, just enough for the icon */
+        padding: 0.45rem;
+        justify-content: center;
+    }
+    .backbtn span {
+        display: none; /* hide visible text on desktop */
+    }
+    .backbtn svg {
+        margin: 0;
+        width: 20px;
+        height: 20px;
+        flex: 0 0 20px;
     }
 }
 
@@ -146,7 +202,10 @@ button:hover {
 /* Small phones: tighten padding and stack comfortably */
 @media (max-width: 420px) {
     .contact {
-        padding: 1.5rem 0.75rem;
+        /* keep a bit more top space on very small screens */
+        padding-top: calc(clamp(1.5rem, 6vw, 2.5rem) + 2rem);
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
     }
     .contact h1 {
         font-size: clamp(1.4rem, 6vw, 1.9rem);
