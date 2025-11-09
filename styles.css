@@ -739,3 +739,57 @@ footer {
     padding: 30px 0px;
     font-size: large;
 }
+
+/* --- Simple responsive helpers (minimal and effective) --- */
+/* Keep this small: global box-sizing, fluid media, simple container and clamp-based overrides */
+* {
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* prevent accidental horizontal scroll */
+}
+/* Make media scale down instead of overflowing */
+img, svg, iframe, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+/* Lightweight container utility you can wrap main sections in */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+/* Clamp-based header and section paddings so the page scales nicely */
+header {
+    padding-top: clamp(3rem, 10vw, 12rem);
+    padding-bottom: clamp(2rem, 6vw, 6rem);
+}
+header h1 {
+    font-size: clamp(2rem, 6vw, 5rem);
+}
+/* Reduce large left/right paddings used in some sections for narrow screens */
+.about,
+.getInTouch,
+.skills,
+.projects {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+/* Make project images responsive without fixed huge heights */
+.project-card img {
+    width: 100%;
+    height: auto !important;
+    margin-bottom: 1.25rem;
+}
+/* Ensure buttons don't overflow on small screens */
+button, .header-btn button, .GITbtns button, .project-card button {
+    max-width: 100%;
+}
+/* Small tweaks for very small screens */
+@media (max-width: 420px) {
+    header h1 { font-size: clamp(1.6rem, 8vw, 2.6rem); }
+}
+
+/* End of simple responsive helpers */
