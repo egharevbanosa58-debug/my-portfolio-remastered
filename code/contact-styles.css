@@ -258,3 +258,44 @@ button:focus {
     outline: 3px solid rgba(3,169,244,0.18);
     outline-offset: 2px;
 }
+
+/* Fixed-position back button at top-left with reduced width
+   - Uses !important to reliably override form-centered widths when present inside the form.
+   - Still respects max-width so it never causes overflow. */
+.backbtn {
+    position: fixed !important;
+    top: 1rem !important;
+    left: 1rem !important;
+    width: 140px !important; /* reduced width */
+    max-width: calc(100% - 2rem) !important;
+    padding: 0.45rem 0.7rem !important;
+    border-radius: 10px !important;
+    z-index: 1200 !important;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12) !important;
+    text-align: center !important;
+}
+
+/* Slightly smaller on very small screens to avoid overlap */
+@media (max-width: 420px) {
+    .backbtn {
+        top: 0.6rem !important;
+        left: 0.6rem !important;
+        width: 110px !important;
+        padding: 0.4rem 0.6rem !important;
+    }
+}
+
+/* On mid-range screens keep it small but readable */
+@media (min-width: 720px) and (max-width: 1199px) {
+    .backbtn {
+        width: 140px !important;
+    }
+}
+
+/* Make sure form-specific centering (grid rules) don't push or resize it when fixed */
+.contact form > .backbtn,
+.contact form > button.backbtn {
+    grid-column: auto !important;
+    justify-self: start !important;
+    width: 140px !important;
+}
