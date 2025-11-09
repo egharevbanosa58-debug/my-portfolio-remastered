@@ -1,0 +1,741 @@
+* {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #d4d6d65e;
+}
+/* Start of Header Section */
+header {
+    text-align: center;
+    justify-content: center;
+    background-image: url(../assets/hacker-mask.jpg);
+    background-size: cover;
+    color: white;
+    padding-top: 180px;
+    padding-bottom: 150px;
+}
+header h1 {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+header #p1 {
+    font-size: 32px;
+    margin-top: 70px;
+    margin-bottom: 35px;
+}
+header p {
+    font-size: 18px;
+    color: #FFFFFFCC;
+    margin-bottom: 40px;
+}
+header span {
+    display: inline-block;
+    transition: .56s;
+}
+header span:hover {
+    scale: 1.05;
+    transition: .56s;
+}
+.header-btn {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+}
+.header-btn button {
+    padding: 15px 32px;
+    font-size: larger;
+    border-radius: 14px;
+    border: none;
+    font-weight: 400;
+    cursor: pointer;
+}
+#VMW {
+    display: inline-flex;
+    color: rgb(8, 108, 123);
+    background-color: white;
+}
+#VMW:hover {
+    background-color: #dfddddfb;
+}
+#GIT {
+    display: inline-flex;
+    color: rgb(8, 108, 123);
+    background-color: white;
+    border: 2px solid white;
+    transition: .4s;
+}
+#GIT:hover {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    transition: .4s;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding-top: 420px;
+        padding-bottom: 350px;
+    }
+    header h1 {
+        font-size: 60px;
+    }
+    header #p1 {
+        font-size: 27px;
+        margin-top: 50px;
+        margin-bottom: 40px;
+    }
+    header p{
+        margin-bottom: 50px;
+    }
+    .header-btn {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding-top: 350px;
+        padding-bottom: 350px;
+    }
+    header h1 {
+        font-size:50px;
+    }
+    header #p1 {
+        font-size: 22px;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+    header p{
+        margin-bottom: 50px;
+    }
+    .header-btn {
+        gap: 15px;
+    }
+}
+
+/* End of Header Section */
+
+/* Start of About Section */
+.about {
+    margin-top: 70px;
+    text-align: center;
+    justify-content: left;
+    padding: 0px 240px;
+    padding-bottom: 100px;
+}
+.about h1 {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+.about p {
+    margin-top: 40px;
+    text-align: left;
+    font-size: 19px;
+    color: #6c7c93;
+    line-height: 1.6;
+    margin-bottom: -37px;
+}
+
+/* Media query for about section responsiveness */
+@media (max-width: 768px) {
+    .about {
+        padding: 0px 55px;
+    }
+    .about h1 {
+        font-size: 48px;
+    }
+    .about p {
+        font-size: 22px;
+        margin-bottom: -27px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about {
+        padding: 0px 25px;
+    }
+    .about h1 {
+        font-size: 36px;
+    }
+    .about p {
+        font-size: 18px;
+        margin-bottom: -20px;
+    }
+}
+
+/* End of Media query for about section responsiveness */
+/* End of About Section */
+
+/* Start of Skills Section */
+.skills {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.skills h1 {
+    font-size: 55px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    padding: 5px 70px;
+}
+.cards {
+        background-color: white;
+        border-radius: 12px;
+        padding: 24px;
+        transition: .5s;
+        border: 1px solid rgb(195, 192, 192);
+}
+.cards:hover {
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+    transition: .5s;
+    transform: translateY(-15px);
+}
+.cards h2 {
+    font-size: x-large;
+    color: #0697e0;
+    /* animation-delay: .1s; */
+}
+.cards ul {
+    margin-top: 15px;
+    list-style-type: none;
+    color: #6c7c93;
+    font-size: larger;
+}
+.cards ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: -40px;
+}
+.cards ul li::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 9px;
+    width: 8px;
+    background-color: #19d5e6;
+    border-radius: 100%;
+    z-index: 99;
+    height: 8px;
+}
+
+/* Media query for skills section responsiveness  */
+@media (max-width: 768px) {
+    .skills h1 {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills h1 {
+        font-size: 36px;
+    }
+}
+/* End of Media query for skills section responsiveness  */
+/* End of Skills Section */
+
+/* Start of Projects Section */
+.projects {
+    margin-top: 180px;
+    margin-bottom: 100px;
+}
+.projects h1 {
+    font-size: 55px;
+    margin-bottom: 48px;
+    text-align: center;
+}
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fc));
+    gap: 30px;
+    padding: 5px 80px;
+}
+.project-card {
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgb(195, 192, 192);
+    transition: .5s;
+}
+.project-card:hover {
+    box-shadow: 4px 5px 8px #19d5e64d;
+    transition: .5s;
+    transform: translateY(-10px);
+}
+.project-card img {
+    transition: 0.5s ease;
+    margin-bottom: 50px;
+    opacity: 90%;
+    /* background-size: cover; */
+    /* position: relative; */
+}
+.project-card img:hover {
+    transform: scale(1.1);
+    opacity: 100%;
+}
+.project-card .x {
+    /* position: absolute; */
+    z-index: 99;
+    border-radius: 10px;
+    font-size: larger;
+    transform: translateY(-110px);
+    margin-right: 30px;
+    padding: 7px 27px;
+    background-image: linear-gradient(to right, #0697e097, #19d5e697);
+    text-decoration: none;
+    color: white;
+    border: 1.25px solid white;
+    float: right;
+}
+.space {
+    padding: 24px 24px;
+}
+.space h2 {
+    font-size: 25px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+.space p {
+    color: #6c7c93;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+span {
+    display: flex;
+    justify-content: left;
+    gap: 15px;
+}
+span p {
+    padding: 3px 12px;
+    background-color: #0697e01a;
+    border-radius: 15px;
+    color: #0697e0;
+}
+.project-card button {
+    padding: 10px 20px;
+    font-size: medium;
+    border-radius: 10px;
+    border: none;
+    background-image: linear-gradient(to right, #0697e0, #19d5e6);
+    color: white;
+    cursor: pointer;
+    width: 80%;
+    margin-left: 120px;
+    margin-bottom: 40px;
+}
+.project-card button:hover {
+    opacity: 70%;
+}
+/* Media query for projects section responsiveness  */
+@media (max-width: 1280px) {
+    .project-card img {
+        width: 1130px;
+        height: 590px;
+    }
+    .project-card button {
+        margin-left: 60px;
+    }
+}
+@media (max-width: 1024px) {
+    .project-card img {
+        width: 800px;
+        height: 500px;
+    }
+    .project-card button {
+        margin-left: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects h1 {
+        font-size: 48px;
+    }
+    .project-card img {
+        width: 620px;
+        height: 390px;
+    }
+    .project-card .x {
+        transform: translateY(-110px);
+        margin-right: 20px;
+        padding: 6px 20px;
+        font-size: medium;
+    }
+    .project-card button {
+        margin-left: 60px;
+    }
+}
+@media (max-width: 712px) {
+    .project-card img {
+        width: 560px;
+        height: 360px;
+    }
+    .project-card .x {
+        transform: translateY(-90px);
+        margin-right: 15px;
+        padding: 5px 18px;
+        font-size: small;
+    }
+    .project-card button {
+        margin-left: 70px;
+        width: 75%;
+        font-size: small;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects h1 {
+        font-size: 36px;
+    }
+    .project-card img {
+        width: 400px;
+        height: 250px;
+    }
+    .project-card .x {
+        transform: translateY(-70px);
+        margin-right: 10px;
+        padding: 5px 15px;
+        font-size: small;
+    }
+    .project-card img {
+    transition: 0.5s ease;
+    margin-bottom: 30px;
+    opacity: 90%;
+    /* background-size: cover; */
+    /* position: relative; */
+}
+    .project-card button {
+        margin-left: 60px;
+        width: 70%;
+        font-size: small;
+    }
+    .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fc));
+    gap: 30px;
+    padding: 5px 40px;
+}
+}
+@media (max-width:450px) {
+    .project-card button {
+        margin-left: 50px;
+        width: 70%;
+        font-size: small;
+    }
+    .project-card img {
+        width: 350px;
+        height: 230px;
+    }
+
+}
+@media (max-width: 420px) {
+    .project-card img {
+        width: 330px;
+        height: 220px;
+    }
+    .project-card .x {
+        transform: translateY(-70px);
+        margin-right: 9px;
+        padding: 4px 14px;
+        font-size: small;
+    }
+}
+@media (max-width: 390px) {
+    .project-card img {
+        width: 320px;
+        height: 200px;
+    }
+    .project-card .x {
+        transform: translateY(-70px);
+        margin-right: 8px;
+        padding: 4px 12px;
+        font-size: small;
+    }
+}
+@media (max-width: 360px) {
+    .project-card img {
+        width: 270px;
+        height: 180px;
+    }
+    .project-card .x {
+        transform: translateY(-70px);
+        margin-right: 6px;
+        padding: 4px 10px;
+        font-size: small;
+    }
+    .project-card button {
+        margin-left: 45px;
+    }
+    span {
+    display: flex;
+    justify-content: left;
+    gap: 8px;
+}
+}
+@media (max-width: 320px) {
+    .project-card button {
+        margin-left: 40px;
+        width: 60%;
+        font-size: small;
+    }
+}
+/* End of Media query for projects section responsiveness  */
+/* End of Projects Section */
+
+/* Start of Get In Touch Section */
+.getInTouch {
+    margin-top: 180px;
+    margin-bottom: 100px;
+    text-align: center;
+    justify-content: center;
+    padding: 0px 300px;
+}
+.getInTouch h1 {
+    font-size: 55px;
+    margin-bottom: 50px;
+}
+.getInTouch p {
+    font-size: 19px;
+    color: #6c7c93;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+.Bryan {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 40px 80px;
+    border:  1px solid #b5bac2;
+    border-radius: 16px;
+}
+.miller {
+    display: flex;
+    gap: 30px;
+    /* background-color: white; */
+}
+.miller a {
+    text-decoration: none;
+    font-size: larger;
+    color: black;
+    margin-left: 180px;
+    
+}
+.miller svg{
+    width: 30px;
+    height: 30px;
+    color: #0697e0;
+    margin-right: 10px;
+}
+.GITbtns {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+.GITbtns button {
+    padding: 12px 26px;
+    font-size: large;
+    border-radius: 14px;
+    border: none;
+    font-weight: 400;
+    cursor: pointer;
+    background-image: linear-gradient(to right, #0697e0, #19d5e6);
+    color: white;
+    transition: .7s;
+}
+.GITbtns button:hover {
+    border: 1px solid #0697e0;
+    background-image: none;
+    color: #0697e0;
+    transition: .7s;
+}
+.SVGS svg {
+    width: 30px;
+    height: 30px;
+}
+.SVGS {
+    display: flex;
+    margin-left: 245px;
+    gap: 40px;
+    color: rgb(112, 113, 121);
+}
+
+/* Media query for Get in touch section */
+@media (max-width: 768px) {
+    .getInTouch {
+    margin-top: 180px;
+    margin-bottom: 100px;
+    text-align: center;
+    justify-content: center;
+    padding: 0px 100px;
+}
+.miller a {
+    text-decoration: none;
+    font-size: larger;
+    color: black;
+    margin-left: 50px;
+    
+}
+.SVGS {
+    display: flex;
+    margin-left: 120px;
+    gap: 40px;
+    color: rgb(112, 113, 121);
+}
+}
+
+@media (max-width: 480px) {
+    .getInTouch {
+    margin-top: 180px;
+    margin-bottom: 100px;
+    text-align: center;
+    justify-content: center;
+    padding: 0px 40px;
+}
+.miller a {
+    text-decoration: none;
+    font-size: medium;
+    color: black;
+    margin-left: 0px;
+}
+.Bryan {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 40px 60px;
+    border:  1px solid #b5bac2;
+    border-radius: 16px;
+}
+.SVGS {
+    display: flex;
+    margin-left: 50px;
+    gap: 40px;
+    color: rgb(112, 113, 121);
+}
+.GITbtns button {
+    padding: 10px 16px;
+    font-size: small;
+    border-radius: 14px;
+    border: none;
+    font-weight: 400;
+    cursor: pointer;
+    background-image: linear-gradient(to right, #0697e0, #19d5e6);
+    color: white;
+    transition: .7s;
+}
+}
+@media (max-width: 430px) {
+    .getInTouch {
+    margin-top: 180px;
+    margin-bottom: 100px;
+    text-align: center;
+    justify-content: center;
+    padding: 0px 40px;
+}
+.miller a {
+    text-decoration: none;
+    font-size: small;
+    color: black;
+    margin-left: 0px;
+}
+.Bryan {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 40px 60px;
+    border:  1px solid #b5bac2;
+    border-radius: 16px;
+}
+.SVGS {
+    display: flex;
+    margin-left: 30px;
+    gap: 40px;
+    color: rgb(112, 113, 121);
+}
+.GITbtns button {
+    padding: 7px 16px;
+    font-size: small;
+    border-radius: 14px;
+    border: none;
+    font-weight: 400;
+    cursor: pointer;
+    background-image: linear-gradient(to right, #0697e0, #19d5e6);
+    color: white;
+    transition: .7s;
+}
+}
+@media (max-width: 360px) {
+    .getInTouch {
+    margin-top: 180px;
+    margin-bottom: 100px;
+    text-align: center;
+    justify-content: center;
+    padding: 0px 40px;
+}
+.miller a {
+    text-decoration: none;
+    font-size: small;
+    color: black;
+    text-align: left;
+    margin-left: 0px;
+}
+.Bryan {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 40px 20px;
+    border:  1px solid #b5bac2;
+    border-radius: 16px;
+}
+.SVGS {
+    display: flex;
+    margin-left: 50px;
+    gap: 20px;
+    color: rgb(112, 113, 121);
+}
+.GITbtns button {
+    padding: 7px 16px;
+    font-size: x-small;
+    border-radius: 14px;
+    border: none;
+    font-weight: 400;
+    cursor: pointer;
+    background-image: linear-gradient(to right, #0697e0, #19d5e6);
+    color: white;
+    transition: .7s;
+}
+.GITbtns {
+    gap: 20px;
+}
+}
+@media (max-width: 412px) {
+    .miller a {
+    text-decoration: none;
+    font-size: small;
+    color: black;
+    text-align: left;
+    margin-left: 0px;
+}
+.miller {
+    margin-left: 30px;
+}
+.Bryan {
+    padding: 40px 20px;
+}
+.SVGS {
+    margin-left: 60px;
+}
+}
+/* End of media query for get in touch section */
+
+/* Start of footer  */
+footer {
+    background-color: #1d2530;
+    text-align: center;
+    color: white;
+    padding: 30px 0px;
+    font-size: large;
+}
