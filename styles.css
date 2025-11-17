@@ -69,10 +69,7 @@ header span:hover {
     transition: .4s;
 }
 #GIT:hover {
-    background-color: transparent;
-    border: 2px solid white;
-    color: white;
-    transition: .4s;
+    background-color: #dfddddfb;
 }
 
 @media (max-width: 768px) {
